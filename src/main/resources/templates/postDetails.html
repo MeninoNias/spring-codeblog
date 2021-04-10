@@ -22,30 +22,31 @@
         </div>
     </nav>
 </header>
-<div class="container">
-    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
-         aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Posts</a></li>
-        </ol>
-    </nav>
-    <div class="card" th:each="post : ${posts}">
-        <div class="card-body">
+<main>
+    <div class="container">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+             aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Posts</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Post</li>
+            </ol>
+        </nav>
+        <article>
+            <h1 class="card-title" th:text="${post.titulo}"></h1>
             <p class="card-subtitle mb-2 text-muted">
+                <i class="material-icons">person_outline</i>
                 <span th:text="${post.autor}"></span>
-                -
+                <br>
+                <i class="material-icons">date_range</i>
                 <span th:text="${post.data}"></span>
             </p>
+            <section>
+                <p class="cart-text" th:text="${post.texto}"></p>
+            </section>
+        </article>
 
-            <a href="#">
-                <h5 class="card-title" th:text="${post.titulo}"></h5>
-            </a>
-
-            <p class="card-text" th:utext="${#strings.abbreviate(post.texto, 400)}"></p>
-        </div>
     </div>
-</div>
-
+</main>
 <!--JS FILES-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
