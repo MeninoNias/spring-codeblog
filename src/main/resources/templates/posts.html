@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
 
@@ -26,9 +26,19 @@
             <li class="breadcrumb-item active" aria-current="page">Library</li>
         </ol>
     </nav>
-    <div class="card">
+    <div class="card" th:each="post : ${posts}">
         <div class="card-body">
-            This is some text within a card body.
+            <p class="card-subtitle mb-2 text-muted">
+                <span th:text="${post.autor}"></span>
+                -
+                <span th:text="${post.data}"></span>
+            </p>
+
+            <a href="#">
+                <h5 class="card-title" th:text="${post.titulo}"></h5>
+            </a>
+
+            <p class="card-text" th:utext="${#strings.abbreviate(post.texto, 400)}"></p>
         </div>
     </div>
 </div>
