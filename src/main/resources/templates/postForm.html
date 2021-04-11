@@ -30,6 +30,25 @@
             <li class="breadcrumb-item"><a>Novo Post</a></li>
         </ol>
     </nav>
+    <div>
+<!--        <th:block th:include="mensagemValidacao"></th:block>-->
+        <form method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" name="titulo" placeholder="Título *">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="autor" placeholder="Autor *">
+            </div>
+
+            <textarea id="summernote" type="text" class="form-control my-2" name="texto" placeholder="Texto *"></textarea>
+
+            <small class="form-text text-muted">(*) Campos obrigatórios</small>
+
+            <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
+            <a href="/posts" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
+            <!--<button type="submit" class="btn" style="margin-top: 10px;">Cancelar</button>-->
+        </form>
+    </div>
 </div>
 
 <!--JS FILES-->
