@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Code Blog</title>
+
+</head>
+<body>
+  <div class="alert alert-danger alert-dismissible" role="alert" th:if="${not #strings.isEmpty(menssagem)}">
+    <span th:text="${menssagem}"></span>
+  </div>
+</body>
+</html>

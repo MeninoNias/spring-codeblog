@@ -45,6 +45,7 @@ public class CodeBlogController {
     @RequestMapping(value = "/newpost", method = RequestMethod.POST)
     public String savePost(@Valid Post post, BindingResult result, RedirectAttributes attributes){
         if(result.hasErrors()){
+            attributes.addFlashAttribute("menssagem", "Verifique os campos obrigatorios!");
             return "redirect:/newpost";
         }
         post.setData(LocalDate.now());
